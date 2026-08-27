@@ -3,10 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zubair Tariq</title>
+
+  <title>Zubair Tariq | Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, #18384a 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #153c32 0%, transparent 35%),
+        #071312;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 850px;
+      text-align: center;
+      padding: 60px 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(110, 231, 183, 0.35);
+      background: rgba(110, 231, 183, 0.08);
+      border-radius: 999px;
+      color: #86efc0;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(50px, 8vw, 88px);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: #78e4b5;
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: #d1dad7;
+      margin-bottom: 16px;
+    }
+
+    .description {
+      max-width: 620px;
+      margin: 0 auto 36px;
+      color: #91a39d;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #78e4b5;
+      color: #071312;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #9af0cb;
+    }
+
+    .btn-secondary {
+      border: 1px solid #35504a;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-secondary:hover {
+      border-color: #78e4b5;
+      color: #78e4b5;
+      transform: translateY(-2px);
+    }
+
+    .status {
+      margin-top: 55px;
+      color: #60746d;
+      font-size: 13px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: #78e4b5;
+      border-radius: 50%;
+      margin-right: 7px;
+      box-shadow: 0 0 10px #78e4b5;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Zubair Tariq</h1>
-  <p>Portfolio coming soon.</p>
+
+  <main class="container">
+
+    <div class="badge">Portfolio • Coming Soon</div>
+
+    <h1>
+      Zubair <span>Tariq.</span>
+    </h1>
+
+    <p class="subtitle">
+      Computer Science Student • Software & ML Enthusiast
+    </p>
+
+    <p class="description">
+      I build practical software and machine learning projects focused on
+      solving real problems. A complete portfolio featuring my selected work,
+      case studies and technical projects is currently being built.
+    </p>
+
+    <div class="actions">
+      <a
+        class="btn btn-primary"
+        href="https://github.com/ZubairQazzi"
+        target="_blank"
+      >
+        View GitHub
+      </a>
+
+      <a
+        class="btn btn-secondary"
+        href="#"
+      >
+        Full Portfolio Soon
+      </a>
+    </div>
+
+    <p class="status">
+      <span class="dot"></span>
+      Portfolio build in progress
+    </p>
+
+  </main>
+
 </body>
 </html>
