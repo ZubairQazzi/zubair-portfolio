@@ -4,134 +4,326 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Zubair Tariq | Portfolio</title>
+  <title>Zubair Tariq | Software & Machine Learning Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --blue: #2563EB;
+      --dark: #111827;
+      --bg: #F8FAFC;
+      --teal: #14B8A6;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --white: #FFFFFF;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, #18384a 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #153c32 0%, transparent 35%),
-        #071312;
-      color: #ffffff;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      gap: 24px;
     }
 
-    .container {
-      width: 90%;
-      max-width: 850px;
-      text-align: center;
-      padding: 60px 30px;
+    .logo {
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: 700;
+      color: var(--blue);
     }
 
-    .badge {
-      display: inline-block;
-      padding: 8px 16px;
-      margin-bottom: 28px;
-      border: 1px solid rgba(110, 231, 183, 0.35);
-      background: rgba(110, 231, 183, 0.08);
-      border-radius: 999px;
-      color: #86efc0;
-      font-size: 13px;
-      letter-spacing: 1.5px;
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 110px 0 90px;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(50px, 8vw, 88px);
-      line-height: 1;
-      letter-spacing: -4px;
-      margin-bottom: 24px;
+      max-width: 850px;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.03;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
     }
 
     h1 span {
-      color: #78e4b5;
+      color: var(--blue);
     }
 
-    .subtitle {
-      font-size: clamp(18px, 2.5vw, 24px);
-      color: #d1dad7;
-      margin-bottom: 16px;
-    }
-
-    .description {
-      max-width: 620px;
-      margin: 0 auto 36px;
-      color: #91a39d;
-      font-size: 16px;
-      line-height: 1.8;
+    .hero-text {
+      max-width: 720px;
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 34px;
     }
 
     .actions {
       display: flex;
-      justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
     }
 
     .btn {
-      text-decoration: none;
-      padding: 13px 22px;
+      display: inline-block;
+      padding: 13px 20px;
       border-radius: 10px;
-      font-weight: 600;
-      transition: 0.25s ease;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
-      background: #78e4b5;
-      color: #071312;
+      background: var(--blue);
+      color: white;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      background: #9af0cb;
     }
 
     .btn-secondary {
-      border: 1px solid #35504a;
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.03);
+      background: white;
+      border: 1px solid var(--border);
     }
 
     .btn-secondary:hover {
-      border-color: #78e4b5;
-      color: #78e4b5;
-      transform: translateY(-2px);
+      border-color: var(--blue);
+      color: var(--blue);
     }
 
-    .status {
-      margin-top: 55px;
-      color: #60746d;
+    section {
+      padding: 85px 0;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -1.5px;
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 38px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .card-tag {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .tech {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .skills {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .skills h3 {
+      margin-bottom: 15px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .skills-list span {
+      background: #EFF6FF;
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .future-box {
+      background: var(--dark);
+      color: white;
+      border-radius: 22px;
+      padding: 40px;
+    }
+
+    .future-box p {
+      color: #CBD5E1;
+      max-width: 730px;
+      margin: 12px 0 24px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
       font-size: 13px;
     }
 
-    .dot {
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      background: #78e4b5;
-      border-radius: 50%;
-      margin-right: 7px;
-      box-shadow: 0 0 10px #78e4b5;
-    }
+    @media (max-width: 760px) {
+      .nav-links {
+        display: none;
+      }
 
-    @media (max-width: 600px) {
+      .hero {
+        padding-top: 75px;
+      }
+
       h1 {
         letter-spacing: -2px;
       }
 
-      .container {
-        padding: 40px 20px;
+      .projects-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .future-box {
+        padding: 28px;
       }
     }
   </style>
@@ -139,47 +331,356 @@
 
 <body>
 
-  <main class="container">
+  <nav>
+    <div class="wrap nav-inner">
 
-    <div class="badge">Portfolio • Coming Soon</div>
-
-    <h1>
-      Zubair <span>Tariq.</span>
-    </h1>
-
-    <p class="subtitle">
-      Computer Science Student • Software & ML Enthusiast
-    </p>
-
-    <p class="description">
-      I build practical software and machine learning projects focused on
-      solving real problems. A complete portfolio featuring my selected work,
-      case studies and technical projects is currently being built.
-    </p>
-
-    <div class="actions">
-      <a
-        class="btn btn-primary"
-        href="https://github.com/ZubairQazzi"
-        target="_blank"
-      >
-        View GitHub
+      <a class="logo" href="#home">
+        ZT
       </a>
 
-      <a
-        class="btn btn-secondary"
-        href="#"
-      >
-        Full Portfolio Soon
-      </a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#future">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
     </div>
+  </nav>
 
-    <p class="status">
-      <span class="dot"></span>
-      Portfolio build in progress
-    </p>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="wrap">
+
+        <p class="eyebrow">
+          Software • Machine Learning • AI
+        </p>
+
+        <h1>
+          I build practical software and
+          <span>machine learning solutions.</span>
+        </h1>
+
+        <p class="hero-text">
+          I'm Zubair Tariq, a Computer Science student focused on turning
+          real problems into working, measurable software and machine
+          learning projects.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn btn-primary"
+            href="#work"
+          >
+            View My Work
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://drive.google.com/file/d/1ORuwkLUbszxiBSIXcCXFhfP2zuND7Hsj/view"
+            target="_blank"
+          >
+            View CV
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://calendly.com/zubairqaziofficial/30min"
+            target="_blank"
+          >
+            Book a Call
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="work">
+      <div class="wrap">
+
+        <p class="section-label">
+          Selected work
+        </p>
+
+        <h2>
+          Projects built around real problems.
+        </h2>
+
+        <p class="section-intro">
+          A selection of machine learning and software projects showing
+          how I approach a problem, make technical decisions, and turn
+          those decisions into something usable.
+        </p>
+
+        <div class="projects-grid">
+
+          <article class="card">
+
+            <p class="card-tag">
+              Machine Learning
+            </p>
+
+            <h3>
+              FlyRank Machine Learning Internship
+            </h3>
+
+            <p>
+              Built a content refresh opportunity scoring workflow using
+              pseudonymized search-performance data. Compared transparent
+              baselines with machine-learning models and converted the
+              ranking into human-review recommendations.
+            </p>
+
+            <p class="tech">
+              Python • DuckDB • scikit-learn • GitHub Pages
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <p class="card-tag">
+              Machine Learning + Routing
+            </p>
+
+            <h3>
+              Road Accident Hotspot & Safe Route Finder
+            </h3>
+
+            <p>
+              Built a prototype for identifying accident hotspots and
+              comparing route distance with accident risk to support
+              safer route decisions.
+            </p>
+
+            <p class="tech">
+              Python • Streamlit • K-Means • Random Forest • Dijkstra
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <p class="card-tag">
+              Application Development
+            </p>
+
+            <h3>
+              Smile Cure Dental Management System
+            </h3>
+
+            <p>
+              Developed and deployed a clinic-management application
+              designed around straightforward workflows for dentists
+              and clinic staff.
+            </p>
+
+            <p class="tech">
+              Flutter • Dart • Firebase • Firebase Hosting
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <p class="card-tag">
+              Application Development
+            </p>
+
+            <h3>
+              Questify — Gamified Productivity App
+            </h3>
+
+            <p>
+              Built a gamified productivity application with quests,
+              timers, rewards, levels, streaks, and progress tracking
+              to encourage consistent task completion.
+            </p>
+
+            <p class="tech">
+              Flutter • Dart • Firebase • Firebase Hosting
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="about">
+      <div class="wrap about-grid">
+
+        <div class="about-copy">
+
+          <p class="section-label">
+            About
+          </p>
+
+          <h2>
+            Computer Science, software, and applied ML.
+          </h2>
+
+          <p>
+            I am a Computer Science student moving deeper into machine
+            learning while continuing to build practical software.
+          </p>
+
+          <p>
+            I enjoy taking a real problem, breaking it into smaller
+            technical decisions, testing those decisions, and turning
+            the result into something people can actually use.
+          </p>
+
+          <p>
+            I am currently interested in junior software engineering
+            and machine-learning opportunities where I can keep
+            building, learning, and working on real systems.
+          </p>
+
+        </div>
+
+
+        <div class="skills">
+
+          <h3>
+            Tools & skills
+          </h3>
+
+          <div class="skills-list">
+
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Firebase</span>
+            <span>SQL</span>
+            <span>C++</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Data Analysis</span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="future">
+      <div class="wrap">
+
+        <div class="future-box">
+
+          <p class="section-label">
+            Research & future work
+          </p>
+
+          <h2>
+            Building beyond individual projects.
+          </h2>
+
+          <p>
+            This space will grow with research notes, technical posts,
+            and capstone work. My current featured research explores
+            whether historical search signals can help prioritize
+            content pages for human refresh review.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="https://zubairqazzi.github.io/flyrank-ml-internship-zubair/"
+            target="_blank"
+          >
+            Read ML Capstone
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+
+        <p class="section-label">
+          Contact
+        </p>
+
+        <h2>
+          Interested in working together?
+        </h2>
+
+        <p>
+          I'm open to junior software and machine-learning opportunities.
+          You can review my work, connect with me, or reach out directly.
+        </p>
+
+        <div class="contact-links">
+
+          <a
+            class="btn btn-primary"
+            href="mailto:zubairqaziofficial@gmail.com"
+          >
+            Email Me
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://linkedin.com/in/zubair-tariq-241a9834a"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/ZubairQazzi"
+            target="_blank"
+          >
+            GitHub
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://drive.google.com/file/d/1ORuwkLUbszxiBSIXcCXFhfP2zuND7Hsj/view"
+            target="_blank"
+          >
+            View CV
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://calendly.com/zubairqaziofficial/30min"
+            target="_blank"
+          >
+            Book a Call
+          </a>
+
+        </div>
+
+      </div>
+    </section>
 
   </main>
+
+
+  <footer>
+    <div class="wrap">
+      © 2026 Zubair Tariq • Built with HTML & CSS • Hosted on GitHub Pages
+    </div>
+  </footer>
 
 </body>
 </html>
