@@ -25,9 +25,9 @@
 
   <style>
 
-    /* =========================================================
+    /* =========================
        DESIGN TOKENS
-    ========================================================= */
+    ========================== */
 
     :root {
       --navy: #06101e;
@@ -59,9 +59,9 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        RESET
-    ========================================================= */
+    ========================== */
 
     * {
       margin: 0;
@@ -98,31 +98,32 @@
       font: inherit;
     }
 
+    section {
+      scroll-margin-top: 92px;
+    }
+
     .wrap {
       width: min(1180px, 90%);
       margin: 0 auto;
     }
 
 
-    /* =========================================================
+    /* =========================
        NAVIGATION
-    ========================================================= */
+    ========================== */
 
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-
       z-index: 100;
 
-      background: rgba(6, 16, 30, 0.83);
-
+      background: rgba(6, 16, 30, 0.86);
       backdrop-filter: blur(18px);
 
       border-bottom:
-        1px solid
-        rgba(255, 255, 255, 0.08);
+        1px solid rgba(255, 255, 255, 0.08);
     }
 
     .nav-inner {
@@ -167,8 +168,7 @@
       color: white;
 
       box-shadow:
-        0 10px 30px
-        rgba(37, 99, 235, 0.25);
+        0 10px 30px rgba(37, 99, 235, 0.25);
     }
 
     .nav-links {
@@ -199,8 +199,7 @@
       padding: 10px 16px;
 
       border:
-        1px solid
-        rgba(255, 255, 255, 0.15);
+        1px solid rgba(255, 255, 255, 0.15);
 
       border-radius: 11px;
     }
@@ -212,8 +211,7 @@
       height: 43px;
 
       border:
-        1px solid
-        var(--border-dark);
+        1px solid var(--border-dark);
 
       border-radius: 11px;
 
@@ -228,9 +226,9 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        HERO
-    ========================================================= */
+    ========================== */
 
     .hero {
       position: relative;
@@ -326,8 +324,7 @@
       margin-bottom: 25px;
 
       border:
-        1px solid
-        rgba(45, 212, 191, 0.28);
+        1px solid rgba(45, 212, 191, 0.28);
 
       border-radius: 999px;
 
@@ -347,13 +344,14 @@
       width: 7px;
       height: 7px;
 
+      flex: 0 0 7px;
+
       border-radius: 50%;
 
       background: var(--teal);
 
       box-shadow:
-        0 0 12px
-        var(--teal);
+        0 0 12px var(--teal);
     }
 
     .hero h1 {
@@ -404,9 +402,9 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        BUTTONS
-    ========================================================= */
+    ========================== */
 
     .btn {
       display: inline-flex;
@@ -427,8 +425,7 @@
 
       cursor: pointer;
 
-      transition:
-        0.2s ease;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -442,8 +439,7 @@
       color: white;
 
       box-shadow:
-        0 14px 35px
-        rgba(37, 99, 235, 0.23);
+        0 14px 35px rgba(37, 99, 235, 0.23);
     }
 
     .btn-primary:hover {
@@ -457,8 +453,7 @@
         rgba(255, 255, 255, 0.04);
 
       border:
-        1px solid
-        rgba(255, 255, 255, 0.15);
+        1px solid rgba(255, 255, 255, 0.15);
     }
 
     .btn-dark-secondary:hover {
@@ -474,21 +469,19 @@
       color: var(--text);
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
     }
 
     .btn-light:hover {
       color: var(--blue);
 
-      border-color:
-        var(--blue);
+      border-color: var(--blue);
     }
 
 
-    /* =========================================================
+    /* =========================
        FEATURED ML CARD
-    ========================================================= */
+    ========================== */
 
     .feature-card {
       position: relative;
@@ -506,12 +499,10 @@
         );
 
       border:
-        1px solid
-        rgba(255, 255, 255, 0.11);
+        1px solid rgba(255, 255, 255, 0.11);
 
       box-shadow:
-        0 30px 100px
-        rgba(0, 0, 0, 0.25);
+        0 30px 100px rgba(0, 0, 0, 0.25);
     }
 
     .card-topline {
@@ -576,8 +567,7 @@
         rgba(255, 255, 255, 0.045);
 
       border:
-        1px solid
-        rgba(255, 255, 255, 0.08);
+        1px solid rgba(255, 255, 255, 0.08);
     }
 
     .metric-value {
@@ -605,9 +595,9 @@
     }
 
 
-    /* =========================================================
-       GLOBAL LIGHT SECTIONS
-    ========================================================= */
+    /* =========================
+       LIGHT SECTIONS
+    ========================== */
 
     .light-section {
       background: var(--page);
@@ -652,9 +642,9 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        PROJECTS
-    ========================================================= */
+    ========================== */
 
     .project-grid {
       display: grid;
@@ -678,8 +668,7 @@
       background: white;
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius:
         var(--radius-lg);
@@ -784,9 +773,9 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        ABOUT
-    ========================================================= */
+    ========================== */
 
     .about-layout {
       display: grid;
@@ -816,8 +805,7 @@
       padding: 29px;
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius:
         var(--radius-lg);
@@ -825,8 +813,7 @@
       background: white;
 
       box-shadow:
-        0 20px 60px
-        rgba(15, 23, 42, 0.06);
+        0 20px 60px rgba(15, 23, 42, 0.06);
     }
 
     .skill-panel h3 {
@@ -846,8 +833,7 @@
       border-radius: 999px;
 
       border:
-        1px solid
-        #dbe5f0;
+        1px solid #dbe5f0;
 
       color: #334155;
 
@@ -858,9 +844,9 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        RESEARCH
-    ========================================================= */
+    ========================== */
 
     .research-section {
       position: relative;
@@ -945,8 +931,7 @@
         rgba(255, 255, 255, 0.04);
 
       border:
-        1px solid
-        var(--border-dark);
+        1px solid var(--border-dark);
     }
 
     .summary-item {
@@ -958,8 +943,7 @@
       padding: 15px 0;
 
       border-bottom:
-        1px solid
-        var(--border-dark);
+        1px solid var(--border-dark);
     }
 
     .summary-item:last-child {
@@ -982,16 +966,15 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        NOTES
-    ========================================================= */
+    ========================== */
 
     .notes-box {
       padding: 38px;
 
       border:
-        1px dashed
-        #cbd5e1;
+        1px dashed #cbd5e1;
 
       border-radius:
         var(--radius-lg);
@@ -1010,9 +993,9 @@
     }
 
 
-    /* =========================================================
-       CONTACT + DYNAMIC FORM
-    ========================================================= */
+    /* =========================
+       CONTACT FORM
+    ========================== */
 
     .contact-section {
       position: relative;
@@ -1032,6 +1015,8 @@
     .contact-section h2 {
       font-size:
         clamp(40px, 5vw, 64px);
+
+      line-height: 1.08;
 
       letter-spacing: -2px;
 
@@ -1070,15 +1055,13 @@
       background: white;
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius:
         var(--radius-lg);
 
       box-shadow:
-        0 22px 70px
-        rgba(15, 23, 42, 0.07);
+        0 22px 70px rgba(15, 23, 42, 0.07);
 
       text-align: left;
     }
@@ -1114,8 +1097,7 @@
       padding: 13px 14px;
 
       border:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       border-radius: 10px;
 
@@ -1135,8 +1117,7 @@
       background: white;
 
       box-shadow:
-        0 0 0 3px
-        rgba(37, 99, 235, 0.08);
+        0 0 0 3px rgba(37, 99, 235, 0.08);
     }
 
     .form-group textarea {
@@ -1170,8 +1151,7 @@
       color: #047857;
 
       border:
-        1px solid
-        #a7f3d0;
+        1px solid #a7f3d0;
     }
 
     .form-status.error {
@@ -1182,8 +1162,7 @@
       color: #b91c1c;
 
       border:
-        1px solid
-        #fecaca;
+        1px solid #fecaca;
     }
 
     .contact-side {
@@ -1228,16 +1207,15 @@
     }
 
 
-    /* =========================================================
+    /* =========================
        FOOTER
-    ========================================================= */
+    ========================== */
 
     footer {
       padding: 28px 0;
 
       border-top:
-        1px solid
-        var(--border);
+        1px solid var(--border);
 
       background: white;
 
@@ -1266,9 +1244,9 @@
     }
 
 
-    /* =========================================================
-       RESPONSIVE DESIGN
-    ========================================================= */
+    /* =========================
+       TABLET
+    ========================== */
 
     @media (max-width: 860px) {
 
@@ -1290,57 +1268,220 @@
     }
 
 
+    /* =========================
+       MOBILE
+    ========================== */
+
     @media (max-width: 680px) {
 
-      .nav-links {
-        position: absolute;
-
-        top: 78px;
-        left: 5%;
-        right: 5%;
-
-        display: none;
-        flex-direction: column;
-
-        padding: 22px;
-
-        border-radius: 16px;
-
-        background: #0c192b;
-
-        border:
-          1px solid
-          var(--border-dark);
+      section {
+        scroll-margin-top: 90px;
       }
 
-      .nav-links.open {
-        display: flex;
+      .wrap {
+        width: min(92%, 620px);
+      }
+
+      .nav-inner {
+        min-height: 74px;
+      }
+
+      .brand {
+        font-size: 18px;
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+
+        border-radius: 12px;
       }
 
       .menu-button {
         display: block;
       }
 
+      .nav-links {
+        position: absolute;
+
+        top: 74px;
+        left: 4%;
+        right: 4%;
+
+        display: none;
+        flex-direction: column;
+
+        gap: 4px;
+
+        padding: 14px;
+
+        border-radius: 15px;
+
+        background:
+          rgba(11, 23, 40, 0.98);
+
+        border:
+          1px solid var(--border-dark);
+
+        box-shadow:
+          0 20px 60px rgba(0, 0, 0, 0.28);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 10px 12px;
+
+        border-radius: 8px;
+
+        text-align: center;
+
+        font-size: 14px;
+      }
+
+      .nav-links a:hover {
+        background:
+          rgba(255, 255, 255, 0.05);
+      }
+
+      .nav-cta {
+        border: 0;
+      }
+
+
+      /* HERO MOBILE FIX */
+
       .hero {
         min-height: auto;
 
         padding:
-          125px 0
-          75px;
+          112px 0
+          70px;
+      }
+
+      .hero-grid {
+        gap: 42px;
+      }
+
+      .availability {
+        max-width: 100%;
+
+        padding: 7px 11px;
+
+        margin-bottom: 22px;
+
+        font-size: 10px;
+
+        line-height: 1.4;
+
+        letter-spacing: 0.9px;
       }
 
       .hero h1 {
+        max-width: 100%;
+
+        font-size:
+          clamp(42px, 11vw, 54px);
+
+        line-height: 1.05;
+
         letter-spacing: -2px;
+
+        margin-bottom: 22px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+
+        line-height: 1.75;
+
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+
+      /* FEATURE CARD MOBILE */
+
+      .feature-card {
+        padding: 23px;
+      }
+
+      .feature-card h3 {
+        font-size: 23px;
       }
 
       .metrics-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
+
+
+      /* SECTIONS MOBILE */
 
       .content-section,
       .research-section,
       .contact-section {
-        padding: 75px 0;
+        padding: 72px 0;
+      }
+
+      .section-header h2,
+      .about-text h2 {
+        font-size:
+          clamp(31px, 9vw, 42px);
+
+        letter-spacing: -1.5px;
+      }
+
+      .project-card {
+        min-height: auto;
+
+        padding: 25px;
+      }
+
+      .project-number {
+        font-size: 44px;
+      }
+
+
+      /* RESEARCH MOBILE */
+
+      .research-section h2 {
+        font-size:
+          clamp(32px, 9vw, 44px);
+      }
+
+
+      /* CONTACT MOBILE */
+
+      .contact-section h2 {
+        font-size:
+          clamp(34px, 9.5vw, 46px);
+
+        line-height: 1.08;
+      }
+
+      .contact-intro {
+        font-size: 15px;
+
+        line-height: 1.7;
       }
 
       .form-row {
@@ -1352,30 +1493,73 @@
         padding: 22px;
       }
 
+      .form-group input,
+      .form-group textarea {
+        font-size: 16px;
+      }
+
+
+      /* FOOTER MOBILE */
+
       .footer-inner {
         align-items: flex-start;
+
         flex-direction: column;
       }
 
     }
 
 
+    /* =========================
+       SMALL PHONE
+    ========================== */
+
     @media (max-width: 430px) {
 
-      .hero-actions {
-        flex-direction: column;
+      .hero h1 {
+        font-size:
+          clamp(39px, 11vw, 48px);
       }
 
-      .hero-actions .btn {
+      .availability {
         width: 100%;
+
+        border-radius: 14px;
+
+        justify-content: flex-start;
       }
 
       .metrics-grid {
         grid-template-columns: 1fr;
       }
 
-      .project-card {
-        min-height: auto;
+      .card-topline {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+      }
+
+      .contact-side h3 {
+        font-size: 21px;
+      }
+
+    }
+
+
+    /* =========================
+       REDUCED MOTION
+    ========================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
       }
 
     }
@@ -1387,9 +1571,7 @@
 <body>
 
 
-  <!-- ======================================================
-       NAVIGATION
-  ======================================================= -->
+  <!-- NAVIGATION -->
 
   <nav>
 
@@ -1415,6 +1597,7 @@
         class="menu-button"
         id="menuButton"
         aria-label="Open navigation menu"
+        aria-expanded="false"
       >
         ☰
       </button>
@@ -1469,9 +1652,7 @@
   <main>
 
 
-    <!-- ======================================================
-         HERO
-    ======================================================= -->
+    <!-- HERO -->
 
     <section
       class="hero"
@@ -1643,9 +1824,7 @@
 
 
 
-    <!-- ======================================================
-         SELECTED WORK
-    ======================================================= -->
+    <!-- SELECTED WORK -->
 
     <section
       class="light-section content-section"
@@ -1848,9 +2027,7 @@
 
 
 
-    <!-- ======================================================
-         ABOUT
-    ======================================================= -->
+    <!-- ABOUT -->
 
     <section
       class="light-section content-section"
@@ -1942,9 +2119,7 @@
 
 
 
-    <!-- ======================================================
-         RESEARCH
-    ======================================================= -->
+    <!-- RESEARCH -->
 
     <section
       class="research-section"
@@ -2075,9 +2250,7 @@
 
 
 
-    <!-- ======================================================
-         NOTES
-    ======================================================= -->
+    <!-- NOTES -->
 
     <section
       class="light-section content-section"
@@ -2113,9 +2286,7 @@
 
 
 
-    <!-- ======================================================
-         CONTACT / DYNAMIC FEATURE
-    ======================================================= -->
+    <!-- CONTACT -->
 
     <section
       class="contact-section"
@@ -2147,8 +2318,6 @@
 
         <div class="contact-layout">
 
-
-          <!-- DYNAMIC CONTACT FORM -->
 
           <form
             id="contactForm"
@@ -2216,7 +2385,6 @@
             </div>
 
 
-            <!-- Spam honeypot -->
             <input
               type="text"
               name="_gotcha"
@@ -2245,8 +2413,6 @@
           </form>
 
 
-
-          <!-- CONTACT LINKS -->
 
           <div class="contact-side">
 
@@ -2323,9 +2489,7 @@
 
 
 
-  <!-- ======================================================
-       FOOTER
-  ======================================================= -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -2372,15 +2536,11 @@
 
 
 
-  <!-- ======================================================
-       JAVASCRIPT
-  ======================================================= -->
+  <!-- JAVASCRIPT -->
 
   <script>
 
-    /* -----------------------------
-       MOBILE NAV
-    ----------------------------- */
+    /* MOBILE NAV */
 
     const menuButton =
       document.getElementById("menuButton");
@@ -2393,7 +2553,13 @@
       "click",
       function () {
 
-        navLinks.classList.toggle("open");
+        const isOpen =
+          navLinks.classList.toggle("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
 
       }
     );
@@ -2410,6 +2576,11 @@
 
               navLinks.classList.remove("open");
 
+              menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
             }
           );
 
@@ -2418,9 +2589,7 @@
 
 
 
-    /* -----------------------------
-       FORM SUBMISSION
-    ----------------------------- */
+    /* FORM SUBMISSION */
 
     const contactForm =
       document.getElementById("contactForm");
