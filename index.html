@@ -2,24 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Zubair Tariq | Software & Machine Learning Portfolio</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
+  <meta
+    name="description"
+    content="Portfolio of Zubair Tariq — Computer Science student building practical software, machine learning, and AI projects."
+  >
+
+  <title>Zubair Tariq | Software & Machine Learning</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================================================
+       1. DESIGN TOKENS
+    ========================================================= */
+
     :root {
-      --blue: #2563EB;
-      --dark: #111827;
-      --bg: #F8FAFC;
-      --teal: #14B8A6;
-      --muted: #64748B;
-      --border: #E2E8F0;
-      --white: #FFFFFF;
+      --bg: #07111f;
+      --bg-soft: #0c1728;
+      --surface: #101d31;
+
+      --white: #ffffff;
+      --text: #e8eef7;
+      --muted: #9baabc;
+
+      --blue: #4f7cff;
+      --blue-strong: #2563eb;
+      --teal: #2dd4bf;
+
+      --light-bg: #f6f8fc;
+      --light-card: #ffffff;
+      --light-text: #111827;
+      --light-muted: #64748b;
+
+      --border-dark: rgba(255, 255, 255, 0.09);
+      --border-light: #e2e8f0;
+
+      --shadow:
+        0 24px 70px rgba(0, 0, 0, 0.18);
+
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
     }
+
+
+    /* =========================================================
+       2. RESET
+    ========================================================= */
 
     * {
       margin: 0;
@@ -33,15 +76,22 @@
 
     body {
       font-family: "Inter", sans-serif;
+      color: var(--text);
       background: var(--bg);
-      color: var(--dark);
       line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body,
+    button,
+    a {
+      -webkit-font-smoothing: antialiased;
     }
 
     h1,
     h2,
     h3,
-    .logo {
+    .brand {
       font-family: "Space Grotesk", sans-serif;
     }
 
@@ -49,379 +99,1427 @@
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     .wrap {
-      width: min(1120px, 90%);
+      width: min(1180px, 90%);
       margin: 0 auto;
     }
 
+
+    /* =========================================================
+       3. NAVIGATION
+    ========================================================= */
+
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 20;
-      background: rgba(248, 250, 252, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      width: 100%;
+      z-index: 100;
+
+      background: rgba(7, 17, 31, 0.78);
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--border-dark);
     }
 
     .nav-inner {
-      min-height: 72px;
+      min-height: 76px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
     }
 
-    .logo {
+    .brand {
       text-decoration: none;
-      font-size: 23px;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: var(--white);
+      font-size: 20px;
       font-weight: 700;
-      color: var(--blue);
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--teal)
+        );
+
+      box-shadow:
+        0 10px 30px rgba(79, 124, 255, 0.25);
     }
 
     .nav-links {
-      display: flex;
-      gap: 24px;
       list-style: none;
+
+      display: flex;
+      align-items: center;
+      gap: 30px;
     }
 
     .nav-links a {
       text-decoration: none;
+      color: #c9d5e4;
+
       font-size: 14px;
       font-weight: 600;
-    }
 
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    .hero {
-      padding: 110px 0 90px;
-    }
-
-    .eyebrow {
-      color: var(--teal);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      max-width: 850px;
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 1.03;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      color: var(--blue);
-    }
-
-    .hero-text {
-      max-width: 720px;
-      font-size: 19px;
-      color: var(--muted);
-      margin-bottom: 34px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
       transition: 0.2s ease;
     }
 
-    .btn-primary {
-      background: var(--blue);
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+    }
+
+    .menu-button {
+      display: none;
+
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid var(--border-dark);
+      border-radius: 10px;
+
+      background: transparent;
       color: white;
+
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       4. HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        145px 0
+        90px;
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 620px;
+      height: 620px;
+
+      top: -150px;
+      right: -170px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(79, 124, 255, 0.25),
+          transparent 65%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      left: -250px;
+      bottom: -250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(45, 212, 191, 0.12),
+          transparent 65%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(320px, 0.75fr);
+
+      gap: 70px;
+
+      align-items: center;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 8px 13px;
+
+      margin-bottom: 24px;
+
+      border:
+        1px solid
+        rgba(45, 212, 191, 0.25);
+
+      border-radius: 999px;
+
+      background:
+        rgba(45, 212, 191, 0.07);
+
+      color: #79eadc;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .availability-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--teal);
+
+      box-shadow:
+        0 0 12px var(--teal);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+
+      font-size:
+        clamp(52px, 6.7vw, 88px);
+
+      line-height: 1.02;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 26px;
+    }
+
+    .hero h1 span {
+      background:
+        linear-gradient(
+          90deg,
+          #6e93ff,
+          #39dbc6
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 720px;
+
+      color: var(--muted);
+
+      font-size:
+        clamp(17px, 2vw, 20px);
+
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+
+    /* =========================================================
+       5. BUTTONS
+    ========================================================= */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding: 0 20px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--blue-strong)
+        );
+
+      color: white;
+
+      box-shadow:
+        0 14px 35px
+        rgba(37, 99, 235, 0.23);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      background: white;
-      border: 1px solid var(--border);
+    .btn-dark-secondary {
+      border: 1px solid
+        rgba(255, 255, 255, 0.14);
+
+      color: white;
+
+      background:
+        rgba(255, 255, 255, 0.04);
     }
 
-    .btn-secondary:hover {
+    .btn-dark-secondary:hover {
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-light {
+      background: white;
+
+      color: var(--light-text);
+
+      border:
+        1px solid
+        var(--border-light);
+    }
+
+    .btn-light:hover {
       border-color: var(--blue);
       color: var(--blue);
     }
 
-    section {
-      padding: 85px 0;
-    }
 
-    .section-label {
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
+    /* =========================================================
+       6. FEATURED HERO CARD
+    ========================================================= */
 
-    h2 {
-      font-size: clamp(32px, 4vw, 46px);
-      letter-spacing: -1.5px;
-      margin-bottom: 15px;
-    }
+    .feature-card {
+      position: relative;
 
-    .section-intro {
-      color: var(--muted);
-      max-width: 700px;
-      margin-bottom: 38px;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
       padding: 28px;
+
+      border-radius: var(--radius-xl);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.025)
+        );
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+      box-shadow: var(--shadow);
     }
 
-    .card-tag {
-      color: var(--teal);
-      font-size: 12px;
+    .feature-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -1px;
+
+      z-index: -1;
+
+      border-radius:
+        var(--radius-xl);
+
+      background:
+        linear-gradient(
+          140deg,
+          rgba(79, 124, 255, 0.4),
+          transparent 40%,
+          rgba(45, 212, 191, 0.25)
+        );
+    }
+
+    .card-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 26px;
+    }
+
+    .tiny-label {
+      color: #93a8c2;
+
+      font-size: 11px;
       font-weight: 700;
+
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 9px;
     }
 
-    .card h3 {
-      font-size: 23px;
+    .mini-status {
+      color: #7de7da;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .feature-card h3 {
+      font-size: 27px;
       line-height: 1.25;
+
       margin-bottom: 12px;
     }
 
-    .card p {
+    .feature-card > p {
       color: var(--muted);
-      margin-bottom: 16px;
+
+      font-size: 14px;
+
+      margin-bottom: 26px;
     }
 
-    .tech {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--blue);
-    }
-
-    .about-grid {
+    .metrics-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 35px;
-      align-items: start;
-    }
 
-    .about-copy p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
+      grid-template-columns:
+        repeat(2, 1fr);
 
-    .skills {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
-    }
-
-    .skills h3 {
-      margin-bottom: 15px;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .skills-list span {
-      background: #EFF6FF;
-      color: var(--blue);
-      border-radius: 999px;
-      padding: 7px 11px;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .future-box {
-      background: var(--dark);
-      color: white;
-      border-radius: 22px;
-      padding: 40px;
-    }
-
-    .future-box p {
-      color: #CBD5E1;
-      max-width: 730px;
-      margin: 12px 0 24px;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 28px;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
       gap: 12px;
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
+    .metric {
+      padding: 17px;
+
+      border-radius: 15px;
+
+      background:
+        rgba(255, 255, 255, 0.045);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
     }
 
-    @media (max-width: 760px) {
-      .nav-links {
-        display: none;
-      }
+    .metric-value {
+      display: block;
 
-      .hero {
-        padding-top: 75px;
-      }
+      color: white;
 
-      h1 {
-        letter-spacing: -2px;
-      }
+      font-family:
+        "Space Grotesk",
+        sans-serif;
 
-      .projects-grid,
-      .about-grid {
+      font-size: 24px;
+      font-weight: 700;
+
+      margin-bottom: 3px;
+    }
+
+    .metric-label {
+      color: #8fa0b5;
+
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+
+    /* =========================================================
+       7. LIGHT CONTENT
+    ========================================================= */
+
+    .light-section {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    section.content-section {
+      padding: 105px 0;
+    }
+
+    .section-header {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 30px;
+
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size:
+        clamp(34px, 4.2vw, 52px);
+
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    .section-copy {
+      max-width: 610px;
+
+      color: var(--light-muted);
+
+      margin-top: 13px;
+    }
+
+
+    /* =========================================================
+       8. PROJECTS
+    ========================================================= */
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .project-card {
+      position: relative;
+
+      min-height: 330px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 30px;
+
+      border:
+        1px solid
+        var(--border-light);
+
+      border-radius:
+        var(--radius-lg);
+
+      background:
+        var(--light-card);
+
+      overflow: hidden;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        #cbd5e1;
+
+      box-shadow:
+        0 24px 60px
+        rgba(15, 23, 42, 0.08);
+    }
+
+    .project-number {
+      position: absolute;
+
+      top: 19px;
+      right: 24px;
+
+      color: #e9eef6;
+
+      font-family:
+        "Space Grotesk",
+        sans-serif;
+
+      font-size: 54px;
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+    .project-type {
+      color: var(--teal);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      margin-bottom: 17px;
+    }
+
+    .project-card h3 {
+      max-width: 420px;
+
+      font-size:
+        clamp(23px, 3vw, 29px);
+
+      line-height: 1.2;
+
+      margin-bottom: 15px;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card p {
+      color: var(--light-muted);
+
+      margin-bottom: 20px;
+    }
+
+    .project-tech {
+      margin-top: auto;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+    }
+
+    .project-tech span {
+      padding: 6px 9px;
+
+      border-radius: 7px;
+
+      background: #eff6ff;
+
+      color: var(--blue);
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .project-link {
+      margin-top: 20px;
+
+      color: var(--blue);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+
+    /* =========================================================
+       9. ABOUT
+    ========================================================= */
+
+    .about-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(280px, 0.75fr);
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size:
+        clamp(38px, 5vw, 58px);
+
+      letter-spacing: -2px;
+      line-height: 1.08;
+
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: var(--light-muted);
+
+      margin-bottom: 17px;
+
+      max-width: 700px;
+    }
+
+    .skill-panel {
+      padding: 28px;
+
+      border-radius:
+        var(--radius-lg);
+
+      background: white;
+
+      border:
+        1px solid
+        var(--border-light);
+
+      box-shadow:
+        0 20px 60px
+        rgba(15, 23, 42, 0.06);
+    }
+
+    .skill-panel h3 {
+      margin-bottom: 17px;
+
+      font-size: 19px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .skill-list span {
+      padding: 8px 11px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid
+        #dbe5f0;
+
+      color: #334155;
+
+      background: #f8fafc;
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       10. RESEARCH
+    ========================================================= */
+
+    .research-section {
+      position: relative;
+
+      padding: 110px 0;
+
+      background:
+        linear-gradient(
+          145deg,
+          #0b1627,
+          #091321
+        );
+
+      overflow: hidden;
+    }
+
+    .research-section::after {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -200px;
+      bottom: -260px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(45, 212, 191, 0.14),
+          transparent 65%
+        );
+    }
+
+    .research-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 0.8fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .research-section h2 {
+      max-width: 720px;
+
+      font-size:
+        clamp(38px, 5vw, 60px);
+
+      line-height: 1.08;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 17px;
+    }
+
+    .research-section p {
+      color: var(--muted);
+
+      max-width: 700px;
+
+      margin-bottom: 26px;
+    }
+
+    .research-summary {
+      padding: 28px;
+
+      border-radius:
+        var(--radius-lg);
+
+      background:
+        rgba(255, 255, 255, 0.04);
+
+      border:
+        1px solid
+        var(--border-dark);
+    }
+
+    .summary-item {
+      padding: 15px 0;
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      gap: 20px;
+
+      border-bottom:
+        1px solid
+        var(--border-dark);
+    }
+
+    .summary-item:last-child {
+      border-bottom: 0;
+    }
+
+    .summary-key {
+      color: #8ea0b8;
+
+      font-size: 12px;
+    }
+
+    .summary-value {
+      color: white;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-align: right;
+    }
+
+
+    /* =========================================================
+       11. FUTURE NOTES
+    ========================================================= */
+
+    .notes-box {
+      padding: 38px;
+
+      border:
+        1px dashed
+        #cbd5e1;
+
+      border-radius:
+        var(--radius-lg);
+
+      background: #fff;
+    }
+
+    .notes-box h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .notes-box p {
+      color: var(--light-muted);
+    }
+
+
+    /* =========================================================
+       12. CONTACT
+    ========================================================= */
+
+    .contact-section {
+      padding: 115px 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f6f8fc,
+          #ffffff
+        );
+
+      color: var(--light-text);
+
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size:
+        clamp(40px, 5vw, 64px);
+
+      letter-spacing: -2px;
+
+      margin-bottom: 18px;
+    }
+
+    .contact-section > .wrap > p {
+      max-width: 680px;
+
+      margin:
+        0 auto 30px;
+
+      color: var(--light-muted);
+    }
+
+    .contact-actions {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 11px;
+    }
+
+
+    /* =========================================================
+       13. FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 28px 0;
+
+      border-top:
+        1px solid
+        var(--border-light);
+
+      background: white;
+      color: #64748b;
+
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 17px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+    }
+
+
+    /* =========================================================
+       14. MOBILE
+    ========================================================= */
+
+    @media (max-width: 860px) {
+
+      .hero-grid,
+      .about-layout,
+      .research-grid {
         grid-template-columns: 1fr;
       }
 
-      section {
-        padding: 65px 0;
+      .hero-grid {
+        gap: 50px;
       }
 
-      .future-box {
-        padding: 28px;
+      .feature-card {
+        max-width: 580px;
       }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        align-items: start;
+        flex-direction: column;
+      }
+
     }
+
+
+    @media (max-width: 680px) {
+
+      .nav-links {
+        position: absolute;
+
+        top: 76px;
+        left: 5%;
+        right: 5%;
+
+        display: none;
+        flex-direction: column;
+
+        padding: 22px;
+
+        border-radius: 16px;
+
+        background: #0d192b;
+
+        border:
+          1px solid
+          var(--border-dark);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding:
+          125px 0
+          75px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      section.content-section,
+      .research-section,
+      .contact-section {
+        padding: 75px 0;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn,
+      .contact-actions .btn {
+        width: 100%;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
+
+  <!-- ======================================================
+       NAVIGATION
+  ======================================================= -->
+
   <nav>
+
     <div class="wrap nav-inner">
 
-      <a class="logo" href="#home">
-        ZT
+      <a
+        class="brand"
+        href="#home"
+      >
+
+        <span class="brand-mark">
+          ZT
+        </span>
+
+        <span>
+          Zubair Tariq
+        </span>
+
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#future">Research</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation menu"
+      >
+        ☰
+      </button>
+
+
+      <ul
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <li>
+          <a href="#work">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#research">
+            Research
+          </a>
+        </li>
+
+        <li>
+          <a href="#notes">
+            Notes
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="nav-cta"
+            href="#contact"
+          >
+            Contact
+          </a>
+        </li>
+
       </ul>
 
     </div>
+
   </nav>
 
 
+
+  <!-- ======================================================
+       HERO
+  ======================================================= -->
+
   <main>
 
-    <section class="hero" id="home">
-      <div class="wrap">
+    <section
+      class="hero"
+      id="home"
+    >
 
-        <p class="eyebrow">
-          Software • Machine Learning • AI
-        </p>
+      <div class="wrap hero-grid">
 
-        <h1>
-          I build practical software and
-          <span>machine learning solutions.</span>
-        </h1>
 
-        <p class="hero-text">
-          I'm Zubair Tariq, a Computer Science student focused on turning
-          real problems into working, measurable software and machine
-          learning projects.
-        </p>
+        <div>
 
-        <div class="actions">
+          <div class="availability">
 
-          <a
-            class="btn btn-primary"
-            href="#work"
-          >
-            View My Work
-          </a>
+            <span class="availability-dot"></span>
 
-          <a
-            class="btn btn-secondary"
-            href="https://drive.google.com/file/d/1ORuwkLUbszxiBSIXcCXFhfP2zuND7Hsj/view"
-            target="_blank"
-          >
-            View CV
-          </a>
+            Open to junior software & ML opportunities
 
-          <a
-            class="btn btn-secondary"
-            href="https://calendly.com/zubairqaziofficial/30min"
-            target="_blank"
-          >
-            Book a Call
-          </a>
+          </div>
+
+
+          <h1>
+
+            I turn real problems into
+
+            <span>
+              practical software and ML systems.
+            </span>
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            I'm Zubair Tariq, a Computer Science student building
+            software, machine learning, and AI-assisted systems with
+            a focus on useful outcomes, clear validation, and
+            real-world decision support.
+
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              class="btn btn-primary"
+              href="#work"
+            >
+              Explore My Work
+            </a>
+
+
+            <a
+              class="btn btn-dark-secondary"
+              href="https://drive.google.com/file/d/1ORuwkLUbszxiBSIXcCXFhfP2zuND7Hsj/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View CV
+            </a>
+
+
+            <a
+              class="btn btn-dark-secondary"
+              href="https://calendly.com/zubairqaziofficial/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Call
+            </a>
+
+          </div>
 
         </div>
 
+
+
+        <!-- Featured ML card -->
+
+        <aside class="feature-card">
+
+          <div class="card-topline">
+
+            <span class="tiny-label">
+              Featured ML Work
+            </span>
+
+            <span class="mini-status">
+              FlyRank Capstone
+            </span>
+
+          </div>
+
+
+          <h3>
+            Content Refresh Opportunity Scoring
+          </h3>
+
+
+          <p>
+
+            A machine-learning ranking workflow designed to help
+            editors prioritize which published pages deserve human
+            review for possible refresh work.
+
+          </p>
+
+
+          <div class="metrics-grid">
+
+            <div class="metric">
+
+              <span class="metric-value">
+                85,967
+              </span>
+
+              <span class="metric-label">
+                eligible content pages
+              </span>
+
+            </div>
+
+
+            <div class="metric">
+
+              <span class="metric-value">
+                4,247
+              </span>
+
+              <span class="metric-label">
+                held-out evaluation pages
+              </span>
+
+            </div>
+
+
+            <div class="metric">
+
+              <span class="metric-value">
+                55%
+              </span>
+
+              <span class="metric-label">
+                Logistic Regression Precision@20
+              </span>
+
+            </div>
+
+
+            <div class="metric">
+
+              <span class="metric-value">
+                20%
+              </span>
+
+              <span class="metric-label">
+                rule baseline Precision@20
+              </span>
+
+            </div>
+
+          </div>
+
+        </aside>
+
       </div>
+
     </section>
 
 
-    <section id="work">
+
+    <!-- ======================================================
+         SELECTED WORK
+    ======================================================= -->
+
+    <section
+      class="light-section content-section"
+      id="work"
+    >
+
       <div class="wrap">
 
-        <p class="section-label">
-          Selected work
-        </p>
 
-        <h2>
-          Projects built around real problems.
-        </h2>
+        <div class="section-header">
 
-        <p class="section-intro">
-          A selection of machine learning and software projects showing
-          how I approach a problem, make technical decisions, and turn
-          those decisions into something usable.
-        </p>
+          <div>
 
-        <div class="projects-grid">
+            <p class="section-kicker">
+              Selected work
+            </p>
 
-          <article class="card">
+            <h2>
+              Projects with a reason to exist.
+            </h2>
 
-            <p class="card-tag">
+            <p class="section-copy">
+
+              Each project started with a real problem, followed by
+              technical decisions, implementation, testing, and a
+              working result.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="project-grid">
+
+
+          <!-- PROJECT 01 -->
+
+          <article class="project-card">
+
+            <div class="project-number">
+              01
+            </div>
+
+            <p class="project-type">
               Machine Learning
             </p>
 
@@ -430,23 +1528,49 @@
             </h3>
 
             <p>
-              Built a content refresh opportunity scoring workflow using
-              pseudonymized search-performance data. Compared transparent
-              baselines with machine-learning models and converted the
-              ranking into human-review recommendations.
+
+              Built a content refresh opportunity scoring workflow
+              using pseudonymized production search data. I compared
+              a transparent rule baseline with Logistic Regression
+              and Random Forest using grouped client validation,
+              then converted the ranking into human-review actions.
+
             </p>
 
-            <p class="tech">
-              Python • DuckDB • scikit-learn • GitHub Pages
-            </p>
+
+            <div class="project-tech">
+
+              <span>Python</span>
+              <span>DuckDB</span>
+              <span>scikit-learn</span>
+              <span>Validation</span>
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="https://zubairqazzi.github.io/flyrank-ml-internship-zubair/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read deployed research paper →
+            </a>
 
           </article>
 
 
-          <article class="card">
 
-            <p class="card-tag">
-              Machine Learning + Routing
+          <!-- PROJECT 02 -->
+
+          <article class="project-card">
+
+            <div class="project-number">
+              02
+            </div>
+
+            <p class="project-type">
+              ML + Routing
             </p>
 
             <h3>
@@ -454,22 +1578,39 @@
             </h3>
 
             <p>
-              Built a prototype for identifying accident hotspots and
-              comparing route distance with accident risk to support
-              safer route decisions.
+
+              Built a Python and Streamlit prototype that identifies
+              accident hotspots and compares route distance with
+              location-based accident risk instead of recommending
+              only the shortest route.
+
             </p>
 
-            <p class="tech">
-              Python • Streamlit • K-Means • Random Forest • Dijkstra
-            </p>
+
+            <div class="project-tech">
+
+              <span>Python</span>
+              <span>Streamlit</span>
+              <span>K-Means</span>
+              <span>Random Forest</span>
+              <span>Dijkstra</span>
+
+            </div>
 
           </article>
 
 
-          <article class="card">
 
-            <p class="card-tag">
-              Application Development
+          <!-- PROJECT 03 -->
+
+          <article class="project-card">
+
+            <div class="project-number">
+              03
+            </div>
+
+            <p class="project-type">
+              Product Development
             </p>
 
             <h3>
@@ -477,22 +1618,38 @@
             </h3>
 
             <p>
-              Developed and deployed a clinic-management application
-              designed around straightforward workflows for dentists
-              and clinic staff.
+
+              Built and deployed a Flutter/Firebase clinic-management
+              application designed around straightforward daily
+              workflows for dentists and clinic staff, with real-time
+              data handling and secure access.
+
             </p>
 
-            <p class="tech">
-              Flutter • Dart • Firebase • Firebase Hosting
-            </p>
+
+            <div class="project-tech">
+
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Firebase</span>
+              <span>Firebase Hosting</span>
+
+            </div>
 
           </article>
 
 
-          <article class="card">
 
-            <p class="card-tag">
-              Application Development
+          <!-- PROJECT 04 -->
+
+          <article class="project-card">
+
+            <div class="project-number">
+              04
+            </div>
+
+            <p class="project-type">
+              Product Development
             </p>
 
             <h3>
@@ -500,134 +1657,337 @@
             </h3>
 
             <p>
-              Built a gamified productivity application with quests,
-              timers, rewards, levels, streaks, and progress tracking
-              to encourage consistent task completion.
+
+              Built a productivity application that turns task
+              completion into quests, rewards, levels, streaks,
+              timers, and progress tracking to support consistent
+              user behavior.
+
             </p>
 
-            <p class="tech">
-              Flutter • Dart • Firebase • Firebase Hosting
-            </p>
+
+            <div class="project-tech">
+
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Firebase</span>
+              <span>Gamification</span>
+
+            </div>
 
           </article>
+
 
         </div>
 
       </div>
+
     </section>
 
 
-    <section id="about">
-      <div class="wrap about-grid">
 
-        <div class="about-copy">
+    <!-- ======================================================
+         ABOUT
+    ======================================================= -->
 
-          <p class="section-label">
-            About
+    <section
+      class="light-section content-section"
+      id="about"
+    >
+
+      <div class="wrap about-layout">
+
+
+        <div class="about-text">
+
+          <p class="section-kicker">
+            About me
           </p>
 
           <h2>
-            Computer Science, software, and applied ML.
+            Learning by building things that actually work.
           </h2>
 
-          <p>
-            I am a Computer Science student moving deeper into machine
-            learning while continuing to build practical software.
-          </p>
 
           <p>
-            I enjoy taking a real problem, breaking it into smaller
-            technical decisions, testing those decisions, and turning
-            the result into something people can actually use.
+
+            I am a Computer Science student at FAST NUCES with
+            hands-on experience across application development,
+            databases, machine learning, data analysis, and
+            AI-assisted workflows.
+
           </p>
 
+
           <p>
-            I am currently interested in junior software engineering
-            and machine-learning opportunities where I can keep
-            building, learning, and working on real systems.
+
+            I enjoy taking an unclear problem, breaking it into
+            smaller technical decisions, testing those decisions,
+            and turning the result into something measurable and
+            useful.
+
+          </p>
+
+
+          <p>
+
+            My current direction is software engineering and applied
+            machine learning, especially work where technical
+            systems support real users or real decisions.
+
           </p>
 
         </div>
 
 
-        <div class="skills">
+
+        <div class="skill-panel">
 
           <h3>
-            Tools & skills
+            Tools I work with
           </h3>
 
-          <div class="skills-list">
+
+          <div class="skill-list">
 
             <span>Python</span>
-            <span>Machine Learning</span>
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>Firebase</span>
-            <span>SQL</span>
             <span>C++</span>
+            <span>Dart</span>
+            <span>SQL</span>
+
+            <span>Machine Learning</span>
+            <span>Data Analysis</span>
+
+            <span>Flutter</span>
+            <span>Firebase</span>
+
+            <span>Streamlit</span>
+
             <span>Git</span>
             <span>GitHub</span>
-            <span>Data Analysis</span>
+
+            <span>OOP</span>
+            <span>DSA</span>
 
           </div>
 
         </div>
 
+
       </div>
+
     </section>
 
 
-    <section id="future">
-      <div class="wrap">
 
-        <div class="future-box">
+    <!-- ======================================================
+         RESEARCH
+    ======================================================= -->
 
-          <p class="section-label">
-            Research & future work
+    <section
+      class="research-section"
+      id="research"
+    >
+
+      <div class="wrap research-grid">
+
+
+        <div>
+
+          <p class="section-kicker">
+            Research & capstone
           </p>
+
 
           <h2>
-            Building beyond individual projects.
+            Can historical search signals help prioritize content review?
           </h2>
 
+
           <p>
-            This space will grow with research notes, technical posts,
-            and capstone work. My current featured research explores
-            whether historical search signals can help prioritize
-            content pages for human refresh review.
+
+            My FlyRank ML capstone evaluates whether historical
+            impressions, clicks, CTR, average position, and search
+            data coverage can help rank published content pages for
+            human refresh review.
+
           </p>
+
+
+          <p>
+
+            The result is deliberately framed as decision support,
+            not automation: the model helps decide where a reviewer
+            should investigate first.
+
+          </p>
+
 
           <a
             class="btn btn-primary"
             href="https://zubairqazzi.github.io/flyrank-ml-internship-zubair/"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            Read ML Capstone
+            Read the Research Paper
           </a>
 
         </div>
 
+
+
+        <div class="research-summary">
+
+
+          <div class="summary-item">
+
+            <span class="summary-key">
+              Feature window
+            </span>
+
+            <span class="summary-value">
+              Mar 1–21, 2026
+            </span>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <span class="summary-key">
+              Outcome window
+            </span>
+
+            <span class="summary-value">
+              Mar 22–31, 2026
+            </span>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <span class="summary-key">
+              Validation
+            </span>
+
+            <span class="summary-value">
+              Grouped client holdout
+            </span>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <span class="summary-key">
+              Client overlap
+            </span>
+
+            <span class="summary-value">
+              0
+            </span>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <span class="summary-key">
+              Best Precision@20
+            </span>
+
+            <span class="summary-value">
+              55%
+            </span>
+
+          </div>
+
+
+        </div>
+
+
       </div>
+
     </section>
 
 
-    <section id="contact" class="contact">
+
+    <!-- ======================================================
+         NOTES / FUTURE POSTS
+    ======================================================= -->
+
+    <section
+      class="light-section content-section"
+      id="notes"
+    >
+
       <div class="wrap">
 
-        <p class="section-label">
+
+        <p class="section-kicker">
+          Notes & future work
+        </p>
+
+
+        <div class="notes-box">
+
+          <h3>
+            More technical writing is coming.
+          </h3>
+
+
+          <p>
+
+            This section is reserved for future engineering notes,
+            experiments, project retrospectives, and research updates
+            as I continue building beyond the internship.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         CONTACT
+    ======================================================= -->
+
+    <section
+      class="contact-section"
+      id="contact"
+    >
+
+      <div class="wrap">
+
+
+        <p class="section-kicker">
           Contact
         </p>
 
+
         <h2>
-          Interested in working together?
+          Let's build something useful.
         </h2>
 
+
         <p>
-          I'm open to junior software and machine-learning opportunities.
-          You can review my work, connect with me, or reach out directly.
+
+          I'm open to junior software engineering and machine
+          learning opportunities. You can review my work, read my
+          CV, connect with me, or schedule a short call.
+
         </p>
 
-        <div class="contact-links">
+
+
+        <div class="contact-actions">
+
 
           <a
             class="btn btn-primary"
@@ -636,51 +1996,146 @@
             Email Me
           </a>
 
+
           <a
-            class="btn btn-secondary"
+            class="btn btn-light"
             href="https://linkedin.com/in/zubair-tariq-241a9834a"
             target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
 
+
           <a
-            class="btn btn-secondary"
+            class="btn btn-light"
             href="https://github.com/ZubairQazzi"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub
           </a>
 
+
           <a
-            class="btn btn-secondary"
+            class="btn btn-light"
             href="https://drive.google.com/file/d/1ORuwkLUbszxiBSIXcCXFhfP2zuND7Hsj/view"
             target="_blank"
+            rel="noopener noreferrer"
           >
             View CV
           </a>
 
+
           <a
-            class="btn btn-secondary"
+            class="btn btn-light"
             href="https://calendly.com/zubairqaziofficial/30min"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Book a Call
           </a>
 
+
         </div>
 
+
       </div>
+
     </section>
+
 
   </main>
 
 
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+
   <footer>
-    <div class="wrap">
-      © 2026 Zubair Tariq • Built with HTML & CSS • Hosted on GitHub Pages
+
+    <div class="wrap footer-inner">
+
+      <span>
+        © 2026 Zubair Tariq
+      </span>
+
+
+      <div class="footer-links">
+
+        <a
+          href="https://github.com/ZubairQazzi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+
+        <a
+          href="https://linkedin.com/in/zubair-tariq-241a9834a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+
+        <a href="#home">
+          Back to top ↑
+        </a>
+
+      </div>
+
     </div>
+
   </footer>
+
+
+
+  <!-- ======================================================
+       SMALL MOBILE NAV SCRIPT
+  ======================================================= -->
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuButton.addEventListener(
+      "click",
+      function () {
+
+        navLinks.classList.toggle("open");
+
+      }
+    );
+
+
+    navLinks
+      .querySelectorAll("a")
+      .forEach(
+        function (link) {
+
+          link.addEventListener(
+            "click",
+            function () {
+
+              navLinks.classList.remove("open");
+
+            }
+          );
+
+        }
+      );
+
+  </script>
+
 
 </body>
 </html>
